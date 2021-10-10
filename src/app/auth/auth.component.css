@@ -10,7 +10,7 @@ html,
 body {
     display: grid;
     height: 100%;
-    width: 100%;
+    max-width: 390px;
     place-items: center;
     background: -webkit-linear-gradient(left, #e20C0C, #e54d34);
 }
@@ -27,6 +27,7 @@ body {
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 420px;
 }
 
 .wrapper .title-text {
@@ -87,6 +88,23 @@ input[type="radio"] {
     display: none;
 }
 
+#login {
+    width: 50%;
+}
+
+#signup {
+    width: 50%;
+}
+
+.red {
+    background-color: red;
+    color: #fff;
+}
+
+.blue {
+    background-color: transparent;
+}
+
 #signup:checked~.slider-tab {
     left: 50%;
 }
@@ -122,7 +140,7 @@ input[type="radio"] {
 
 .form-inner form .field {
     height: 50px;
-    width: 100%;
+    width: 326px;
     margin-top: 20px;
 }
 

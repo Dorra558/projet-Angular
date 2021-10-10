@@ -1,0 +1,66 @@
+
+
+
+    <div class="wrapper">
+      <div class="title-text">
+        <div *ngIf="!displayLogin" class="title login">Login Form</div>
+        <div *ngIf="!displaySignUp" class="title signup">Signup Form</div>
+      </div>
+
+
+      <div class="form-container">
+        <div class="slide-controls">
+          <button name="slide" id="login" (click)="loginController()" [ngClass]="displayLogin ==false? 'red': 'blue'">Login</button>
+          <button name="slide1" id="signup"  (click)="signupController()" >Signup </button>
+          <!-- <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Signup</label> -->
+        </div>
+
+
+        <div class="form-inner">
+          <!--*******Login form****************-->
+          <div *ngIf="displaySignUp==true">
+            <form   class="login"  [formGroup]="form" (submit)="submitLogin()">
+              <div class="field">
+                <input formControlName="email" type="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="field">
+                <input formControlName="password" type="password" class="form-control" placeholder="Password" required>
+              </div>
+              <div class="pass-link">
+                <a href="#">Forgot password?</a>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login" />
+              </div>
+              <div class="signup-link">
+                Not a member? <a href="">Signup now</a>
+              </div>
+            </form>
+          </div>
+
+         <!---********Sign Up form********************-->
+          <div *ngIf="displayLogin==true">
+            <form  class="signup" [formGroup]="form" (submit)="submit()">
+              <div class="field">
+                <input formControlName="email" type="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="field">
+                <input formControlName="password" type="password" class="form-control" placeholder="Password" required>
+              </div>
+              <div class="field">
+                <input formControlName="password" type="password" class="form-control" placeholder="Confirm Password" required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Signup" />
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
