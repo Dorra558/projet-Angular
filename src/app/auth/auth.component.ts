@@ -29,13 +29,15 @@ export class AuthComponent implements OnInit {
     this.displayLogin = false;
     this.displaySignUp = true;
   }
-  
+  refresh(): void {
+    window.location.reload();
+}
   submit(): void {
     this.http.post('http://localhost:8000/api/register', this.form.getRawValue())
-      .subscribe(res => {
-        console.log(res);
-      });
+      .subscribe(res => {console.log(res)})
+      
   }
+  
 
   submitLogin():void {
     this.http.post('http://localhost:8000/api/login', this.form.getRawValue(), {

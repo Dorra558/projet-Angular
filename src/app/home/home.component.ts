@@ -19,10 +19,10 @@ message = 'Bienvenue'
         this.message = this.message;
         Emitters.authEmitter.emit(true);
       },
-      err => {
-        this.message = 'You are not logged in';
-        Emitters.authEmitter.emit(false);
-      }
+      // err => {
+      //   this.message = 'You are not logged in';
+      //   Emitters.authEmitter.emit(false);
+      // }
     );
   }
 
